@@ -2,7 +2,13 @@
     var app = angular.module('App', [
       'ngRoute',
       'mobile-angular-ui',
-      'App.controllers.Main'
+      'App.controllers.Main',
+      'App.controllers.Alerts',
+      'App.controllers.Calender',
+      'App.controllers.Leads',
+      'App.controllers.Settings',
+      'App.controllers.Stats',
+      'App.controllers.Upload'
     ]);
 
     app.config(function($routeProvider) {
