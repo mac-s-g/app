@@ -8,31 +8,38 @@
     app.config(function($routeProvider) {
         $routeProvider.when('/', {
             templateUrl:'home.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/home_partial.css'
         });
             $routeProvider.when('/alerts', {
             templateUrl:'alerts.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/alerts_partial.css'
         });
         $routeProvider.when('/leads', {
             templateUrl:'leads.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/leads_partial.css'
         });
         $routeProvider.when('/stats', {
             templateUrl:'stats.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/stats_partial.css'
         });
         $routeProvider.when('/upload', {
             templateUrl:'upload.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/upload_partial.css'
         });
         $routeProvider.when('/settings', {
             templateUrl:'settings.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/settings_partial.css'
         });
         $routeProvider.when('/calender', {
             templateUrl:'calender.html',
-            reloadOnSearch: false
+            reloadOnSearch: false,
+            css: 'css/calendar_partial.css'
         });
     });
 
