@@ -1,8 +1,14 @@
 // default main controller code
 (function () {
-    var app = angular.module('App.controllers.Main', []);
+    var app = angular.module(
+        'App.controllers.Main', []
+    );
 
     app.controller('MainController', ['$scope', '$location', function($scope, $location) {
+        // Set default location
+        $location.path('/');
+
+        // Declare all other ng-click locations
         $scope.showAlerts = function () {
             $location.path('/alerts');
         }
