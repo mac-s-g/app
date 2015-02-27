@@ -1,30 +1,25 @@
 // default main controller code
-angular.module('App.controllers.Main', [])
+(function () {
+    var app = angular.module('App.controllers.Main', []);
 
-.controller('MainController', function($scope){
-
-});
-
-
-//------------------------------------------------------------------------------------
-//main controller code for weather app
-//http://mobileangularui.com/blog/your-first-phonegap-app-with-mobile-angular-ui/
-//------------------------------------------------------------------------------------
-
-angular.module('App.controllers.Main', [
-// angular.module('WeatherApp.controllers.Main', [
-  'WeatherApp.services.Geolocation',
-  'WeatherApp.services.Forecast'
-  ])
-
-.controller('MainController', function($scope, getCurrentPosition, getWeather){
-  getCurrentPosition(function(position){
-    getWeather(
-      position.coords.latitude,
-      position.coords.longitude,
-      function(location, weather){
-        $scope.location = location;
-        $scope.weather = weather;
-      });
-  });
-});
+    app.controller('MainController', ['$scope', '$location', function($scope, $location) {
+        $scope.showAlerts = function () {
+            $location.path('/alerts');
+        }
+        $scope.showLeads = function () {
+            $location.path('/leads');
+        }
+        $scope.showStats = function () {
+            $location.path('/stats');
+        }
+        $scope.showUpload = function () {
+            $location.path('/upload');
+        }
+        $scope.showSettings = function () {
+            $location.path('/settings');
+        }
+        $scope.showCalender = function () {
+            $location.path('/calender');            
+        }
+    }]); 
+})();
