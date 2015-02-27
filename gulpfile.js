@@ -8,7 +8,7 @@ var config = {
   dest: 'www',
   cordova: true,
   minify_images: true,
-  
+
   vendor: {
     js: [
       './bower_components/angular/angular.js',
@@ -69,7 +69,8 @@ var gulp           = require('gulp'),
     ngFilesort     = require('gulp-angular-filesort'),
     streamqueue    = require('streamqueue'),
     rename         = require('gulp-rename'),
-    path           = require('path');
+    path           = require('path'),
+    minifyCSS      = require('gulp-minify-css');
 
 
 /*================================================
@@ -131,7 +132,7 @@ gulp.task('livereload', function () {
 
 gulp.task('images', function () {
   var stream = gulp.src('src/images/**/*');
-  
+
   if (config.minify_images) {
     stream = stream.pipe(imagemin({
         progressive: true,
@@ -139,7 +140,7 @@ gulp.task('images', function () {
         use: [pngcrush()]
     }));
   }
-  
+
   return stream.pipe(gulp.dest(path.join(config.dest, 'images')));
 });
 
@@ -184,7 +185,7 @@ gulp.task('less', function () {
     .pipe(mobilizer('app.css', {
       'app.css': {
         hover: 'exclude',
-        screens: ['0px']      
+        screens: ['0px']
       },
       'hover.css': {
         hover: 'only',
@@ -194,6 +195,17 @@ gulp.task('less', function () {
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(path.join(config.dest, 'css')));
+});
+
+
+/*====================================================================
+=                        Compile and minify css                      =
+====================================================================*/
+
+gulp.task('css', function () {
+    gulp.src('./src/css/*.css')
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(path.join(config.dest, 'css')));
 });
 
 
@@ -225,7 +237,7 @@ gulp.task('js', function() {
 
 gulp.task('watch', function () {
   if (typeof config.server === 'object') {
-    gulp.watch([config.dest + '/**/*'], ['livereload']);  
+    gulp.watch([config.dest + '/**/*'], ['livereload']);
   }
   gulp.watch(['./src/html/**/*'], ['html']);
   gulp.watch(['./src/less/**/*'], ['less']);
@@ -253,7 +265,7 @@ gulp.task('weinre', function() {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['html', 'fonts', 'images', 'less', 'js'];
+  var tasks = ['html', 'fonts', 'images', 'less', 'css', 'js'];
   seq('clean', tasks, done);
 });
 
@@ -274,6 +286,6 @@ gulp.task('default', function(done){
   }
 
   tasks.push('watch');
-  
+
   seq('build', tasks, done);
 });
