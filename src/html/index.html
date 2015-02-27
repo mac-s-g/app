@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App" ng-controller="MainController">
   <head>
 	<meta charset="utf-8" />
 	<title>app</title>
@@ -14,10 +14,10 @@
 	<!-- inject:js -->
 	<script src="js/app.min.js"></script>
   </head>
-  <body ng-app="App" ng-controller="MainController">
+  <body>
 
 	<!-- Sidebars -->
-	<div ng-include="'sidebar.html'" 
+	<div ng-include="'sidebar.html'"
 			ui-track-as-search-param='true'
 			class="sidebar sidebar-left"></div>
 
@@ -38,7 +38,7 @@
 	  <!-- App Body -->
 	  <div class="app-body">
 		<div class="app-content">
-		  <ng-view></ng-view>  
+		  <ng-view></ng-view>
 		</div>
 	  </div>
 
