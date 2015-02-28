@@ -32,5 +32,6 @@ module.exports = function(config) {
   // 3rd party components
   // config.vendor.js.push('.bower_components/lib/dist/lib.js');
   // config.vendor.fonts.push('.bower_components/font/dist/*');
+  config.vendor.js.push('./bower_components/chartist/dist/chartist.js');
 
 };
