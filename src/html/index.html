@@ -12,17 +12,16 @@
 	<link rel="stylesheet" href="css/responsive.min.css" />
 	<link rel="stylesheet" href="css/main.css"/>
 	<link rel="stylesheet" href="css/chartist.min.css"/>
+	<link rel="stylesheet" href="css/sidebar.min.css"/>
 	<!-- inject:js -->
 	<script src="js/app.min.js"></script>
   </head>
   <body>
 
 	<!-- Sidebars -->
-	<div ng-include="'sidebar.html'"
-			ui-track-as-search-param='true'
-			class="sidebar sidebar-left"></div>
+	<div ng-include="'sidebar.html'" ui-track-as-search-param='true' class="sidebar sidebar-left"></div>
 
-	<div class="app">
+	<div class="app main-container">
 
 	  <!-- Navbars -->
 	  <div class="navbar navbar-app navbar-absolute-top">
@@ -32,7 +31,7 @@
 		  </div>
 		</div>
 		<div class="pull-right">
-			<img style="width:115px; margin-right:15px; margin-top:8px;" src="https://client.conversica.com/style/images/conversica/logo.png">
+			<img class="main-img" src="https://client.conversica.com/style/images/conversica/logo.png">
 		</div>
 	  </div>
 
