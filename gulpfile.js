@@ -206,7 +206,7 @@ gulp.task('css', function () {
     gulp.src([
     	//app specific css
     	'./src/css/*.css',
-    	//chartist stylesheet 
+    	//chartist stylesheet
     	'./bower_components/chartist/dist/chartist.min.css'
     	])
         .pipe(minifyCSS())
