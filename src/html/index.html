@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="App" ng-controller="MainController">
+<html ng-app="App" ng-controller="MainController as mainCtrl">
   <head>
 	<meta charset="utf-8" />
 	<title>app</title>
@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/responsive.min.css" />
 	<link rel="stylesheet" href="css/main.css"/>
 	<link rel="stylesheet" href="css/chartist.min.css"/>
-	<link rel="stylesheet" href="css/sidebar.min.css"/>
+	<link rel="stylesheet" href="css/sidebar.css"/>
 	<!-- inject:js -->
 	<script src="js/app.min.js"></script>
   </head>
@@ -31,13 +31,12 @@
 		  </div>
 		</div>
 		<div class="pull-right">
-			<img class="main-img" src="https://client.conversica.com/style/images/conversica/logo.png">
 		</div>
 	  </div>
 
 	  <!-- App Body -->
 	  <div class="app-body">
-		<div class="app-content">
+		<div class="app-content" ng-class="{'page-fade-out': mainCtrl.fade_out, 'page-fade-in': mainCtrl.fade_in}">
 		  <ng-view></ng-view>
 		</div>
 	  </div>

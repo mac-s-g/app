@@ -1,4 +1,26 @@
 /* style included on all pages */
+
+.page-fade-in {
+  -webkit-animation: 0.2s fade-in;
+  /*animation: 0.5s fade-in;*/
+}
+
+.page-fade-out {
+  -webkit-animation: 0.2s fade-out;
+  /*animation: 0.5s fade-in;*/
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* style included on all pages */
 .main-img {
     width:115px;
     margin-right:15px;
