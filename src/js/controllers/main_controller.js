@@ -39,8 +39,8 @@
         }
 
 
-        function fadeToPage(path) {
-            console.log('change page to ' + path);
+        function fadeToPage(path)
+        {
             that.fade_in = false;
             that.fade_out = true;
             //0.2s fade fade out
@@ -53,7 +53,6 @@
         function changePage(path)
         {
             $location.path('/' + path);
-            console.log('changed to ' + path);
             that.fade_out = false;
             that.fade_in = true;
         }
