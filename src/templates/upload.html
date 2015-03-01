@@ -1,3 +1,23 @@
-<div ng-controller="UploadController as upload">
-	<pre>{{upload.message}}</pre>
+<div ng-controller="UploadController as uploadCtrl" class="container">
+    <div class="container">
+        <form ng-submit="uploadCtrl.uploadLead()">
+            <div class="form-group">
+                <label for="input-first-name">First Name</label>
+                <input type="text" class="form-control" id="input-first-name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="input-last-name">Last Name</label>
+                <input type="text" class="form-control" id="input-last-name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="input-email">Email</label>
+                <input type="email" class="form-control" id="input-email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="input-email">Phone</label>
+                <input type="text" class="form-control" id="input-phone" placeholder="Phone">
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Upload</button>
+        </form>
+    </div>
 </div>

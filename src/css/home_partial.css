@@ -1,1 +1,24 @@
 /* partial css for home (landing) page */
+i {
+    color:#007aff;
+    font-size:120px;
+}
+span {
+    clear: both;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top:10px;
+}
+.home-container {
+    height:100%;
+}
+.home-container-panel {
+    margin-top:50px;
+}
+.home-row {
+    margin-bottom:60px;
+}
+.home-col {
+    text-align: center;
+}

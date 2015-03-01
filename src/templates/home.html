@@ -1,22 +1,46 @@
-<style type="text/css">
-	i {
-		color:#007aff;
-		font-size:120px;
-	}
-</style>
-<section class="section container-fluid" style="height:100%;">
-	<div class="bs-panel" style="margin-top:70px;">
-	<div class="row" style="margin-bottom:100px">
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showAlerts()"><i class="fa fa-bullhorn fa-5x"></i></a></div>
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showLeads()"><i class="fa fa-tasks fa-5x"></i></a></div>
+<section class="section container-fluid home-container">
+	<div class="bs-panel home-container-panel">
+	<div class="row home-row">
+		<div class="col-xs-6 home-col">
+			<a ng-click="showAlerts()">
+				<i class="fa fa-bullhorn fa-5x"></i>
+				<span>Alerts</span>
+			</a>
+		</div>
+		<div class="col-xs-6 home-col">
+			<a ng-click="showLeads()">
+				<i class="fa fa-users fa-5x"></i>
+				<span>Leads</span>
+			</a>
+		</div>
 	</div>
-	<div class="row" style="margin-bottom:100px;">
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showStats()"><i class="fa fa-pie-chart fa-5x"></i></a></div>
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showUpload()"><i class="fa fa-upload fa-5x"></i></a></div>		
+	<div class="row home-row">
+		<div class="col-xs-6 home-col">
+			<a ng-click="showStats()">
+				<i class="fa fa-pie-chart fa-5x"></i>
+				<span>Stats</span>
+			</a>
+		</div>
+		<div class="col-xs-6 home-col">
+			<a ng-click="showUpload()">
+				<i class="fa fa-cloud-upload fa-5x"></i>
+				<span>Upload</span>
+			</a>
+		</div>
 	</div>
 	<div class="row">
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showSettings()"><i class="fa fa-cogs fa-5x"></i></a></div>
-		<div class="col-xs-6" style="text-align:center"><a ng-click="showCalender()"><i class="fa fa-calendar fa-5x"></i></a></div>		
+		<div class="col-xs-6 home-col">
+			<a ng-click="showSettings()">
+				<i class="fa fa-cogs fa-5x"></i>
+				<span>Settings</span>
+			</a>
+		</div>
+		<div class="col-xs-6 home-col">
+			<a ng-click="showCalender()">
+				<i class="fa fa-calendar fa-5x"></i>
+				<span>Calender</span>
+			</a>
+		</div>
 	</div>
 	</div>
 </section>
