@@ -4,28 +4,57 @@
         'App.controllers.Main', []
     );
 
-    app.controller('MainController', ['$scope', '$location', function($scope, $location) {
+    app.controller(
+        'MainController',
+        [
+            '$scope',
+            '$location',
+            '$timeout',
+            function($scope, $location, $timeout) {
+        var that = this;
+        this.fade_in = false;
+        this.fade_out = false;
+
         // Set default location
         $location.path('/');
 
         // Declare all other ng-click locations
         $scope.showAlerts = function () {
-            $location.path('/alerts');
+            fadeToPage('alerts');
         }
         $scope.showLeads = function () {
-            $location.path('/leads');
+            fadeToPage('leads');
         }
         $scope.showStats = function () {
-            $location.path('/stats');
+            fadeToPage('stats');
         }
         $scope.showUpload = function () {
-            $location.path('/upload');
+            fadeToPage('upload');
         }
         $scope.showSettings = function () {
-            $location.path('/settings');
+            fadeToPage('settings');
         }
-        $scope.showCalender = function () {
-            $location.path('/calender');            
+        $scope.showCalendar = function () {
+            fadeToPage('calendar');
         }
-    }]); 
+
+
+        function fadeToPage(path)
+        {
+            that.fade_in = false;
+            that.fade_out = true;
+            //0.2s fade fade out
+            $timeout(function(){
+                changePage(path);
+
+            },200);
+        }
+
+        function changePage(path)
+        {
+            $location.path('/' + path);
+            that.fade_out = false;
+            that.fade_in = true;
+        }
+    }]);
 })();
