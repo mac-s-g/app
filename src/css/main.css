@@ -1,12 +1,12 @@
 /* style included on all pages */
 
 .page-fade-in {
-  -webkit-animation: 0.5s fade-in;
+  -webkit-animation: 0.2s fade-in;
   /*animation: 0.5s fade-in;*/
 }
 
 .page-fade-out {
-  -webkit-animation: 0.5s fade-out;
+  -webkit-animation: 0.2s fade-out;
   /*animation: 0.5s fade-in;*/
 }
 

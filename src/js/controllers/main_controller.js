@@ -34,7 +34,7 @@
         $scope.showSettings = function () {
             fadeToPage('settings');
         }
-        $scope.showCalender = function () {
+        $scope.showCalendar = function () {
             fadeToPage('calendar');
         }
 
@@ -47,7 +47,7 @@
             $timeout(function(){
                 changePage(path);
 
-            },500);
+            },200);
         }
 
         function changePage(path)
