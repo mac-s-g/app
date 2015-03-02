@@ -2,11 +2,11 @@
     <div class="upload-title-container">
         <i class="fa fa-user fa-3x"></i><span class="upload-lead-title-text">Upload a Lead</span>
     </div>
-    <form ng-submit="uploadLead()" name="uploadLead" novalidate>
+    <form ng-submit="uploadLead()" name="uploadLeadForm" novalidate>
         <div class="form-group">
             <label for="input-first-name">First Name</label>
             <input type="text" name="firstName" class="form-control" id="input-first-name" placeholder="First Name" ng-model="lead.first_name" ng-pattern="word" required>
-            <div ng-show="false" class="help-block">
+            <div ng-show="!userForm.name.$pristine && submitted" class="alert alert-danger form-alert">
                 Give us the lead's first name!
             </div>
         </div>
@@ -24,10 +24,12 @@
         </div>
         <div class="form-group">
             <label for="input-campaign">Messaging Campaign</label>
-            <select class="form-control" ng-model="lead.messaging_campaign" ng-options="campaign as campaign.id for campaign in messaging_campaigns"></select>
+            <select
+            class="form-control"
+            ng-model="lead.messaging_campaign"
+            ng-options="campaign as campaign.name for campaign in messaging_campaigns"></select>
         </div>
-        <button type="submit" class="btn btn-primary submit-btn">Upload</button>
+        <button type="submit" class="btn btn-primary submit-btn"><i class="fa fa-upload" style="margin-right:5px;"></i>Upload</button>
     </form>
-    {{lead}}
-    {{submitted}}
+    {{response}}
 </div>
