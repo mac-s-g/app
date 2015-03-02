@@ -27,10 +27,10 @@
             reloadOnSearch: false,
             css: 'css/leads.css'
         });
-        $routeProvider.when('/stats', {
-            templateUrl:'stats.html',
+        $routeProvider.when('/performance', {
+            templateUrl:'performance.html',
             reloadOnSearch: false,
-            css: 'css/stats.css'
+            css: 'css/performance.css'
         });
         $routeProvider.when('/upload', {
             templateUrl:'upload.html',

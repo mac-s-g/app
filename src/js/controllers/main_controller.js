@@ -28,8 +28,8 @@
             $scope.showLeads = function () {
                 fadeToPage('leads');
             }
-            $scope.showStats = function () {
-                fadeToPage('stats');
+            $scope.showPerformance = function () {
+                fadeToPage('performance');
             }
             $scope.showUpload = function () {
                 fadeToPage('upload');
