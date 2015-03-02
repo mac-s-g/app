@@ -19,6 +19,9 @@
             $location.path('/');
 
             // Declare all other ng-click locations
+            $scope.showHome = function() {
+                fadeToPage('');
+            }
             $scope.showAlerts = function () {
                 fadeToPage('alerts');
             }
