@@ -1,7 +1,9 @@
 (function () {
     var app = angular.module('App.controllers.Upload', []);
-    app.controller('UploadController', ['$scope', function($scope) {
-        $scope.response = '';
+    app.controller('UploadController', ['$scope', '$http', function($scope, $http) {
+        $scope.response = {};
+        $scope.response.status = false;
+        $scope.response.message = '';
         $scope.submitted = false;
         $scope.lead = {};
 
@@ -21,13 +23,27 @@
             $scope.lead = {};
         };
 
-        $scope.uploadLead = function () {
+        $scope.uploadLead = function (valid) {
             $scope.submitted = true;
-            if
+            if (valid) {
+                $http.post("http://54.69.7.81/taylor/html/app_api/methods/Post/", {lead : $scope.lead})
+                    .success(function (data, status, headers, config) {
+                        var data = angular.fromJson(data);
+                        console.log(data);
+                        if (data.status) {
+                            $scope.response.status = true;
+                            $scope.response.message = data.message;
+                            $scope.resetLead();
+                        } else {
+                            $scope.response.status = false;
+                            $scope.response.message = data.message;
+                        }
+                    })
+                    .error(function (data, status, headers, config) {
+                        console.log('FATAL ERROR');
+                    });
+            }
         };
 
-        this.postLead = function () {
-            var lead =
-        };
     }]);
 })();

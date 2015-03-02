@@ -2,7 +2,8 @@
     <div class="upload-title-container">
         <i class="fa fa-user fa-3x"></i><span class="upload-lead-title-text">Upload a Lead</span>
     </div>
-    <form ng-submit="uploadLead()" name="uploadLeadForm" novalidate>
+    <div ng-class="response.status ? 'alert alert-success' : 'alert alert-warning'" ng-show="response.message.length">{{response.message}}</div>
+    <form ng-submit="uploadLead(uploadLeadForm.$valid)" name="uploadLeadForm" novalidate>
         <div class="form-group">
             <label for="input-first-name">First Name</label>
             <input type="text" name="firstName" class="form-control" id="input-first-name" placeholder="First Name" ng-model="lead.first_name" ng-pattern="word" required>
@@ -31,5 +32,4 @@
         </div>
         <button type="submit" class="btn btn-primary submit-btn"><i class="fa fa-upload" style="margin-right:5px;"></i>Upload</button>
     </form>
-    {{response}}
 </div>

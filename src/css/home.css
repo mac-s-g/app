@@ -1,9 +1,8 @@
 /* partial css for home (landing) page */
-i {
+.landing-icon {
     color:#007aff;
-    font-size:120px;
 }
-span {
+.landing-icon-text {
     clear: both;
     display: block;
     font-size: 25px;
