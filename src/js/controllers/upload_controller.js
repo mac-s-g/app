@@ -1,16 +1,22 @@
 (function () {
     var app = angular.module('App.controllers.Upload', []);
     app.controller('UploadController', ['$scope', function($scope) {
-        this.messaging_campaigns = [
-            {id : 'Messaging 1'},
-            {id : 'Messaging 2'},
-            {id : 'Messaging 3'}
-         ];
+        $scope.lead = {};
 
-        this.lead = {};
+        $scope.messaging_campaigns = [
+            {id :'Select One'},
+            {id : 'Campaign 1'},
+            {id : 'Campaign 2'},
+            {id : 'Campaign 3'}
+        ];
+        $scope.lead.messaging_campaign = $scope.messaging_campaigns[0];
+        $scope.resetLead = function () {
+            $scope.lead = {};
+        };
 
-        this.uploadLead = function () {
-            console.log(this.lead);
-        }
+        $scope.uploadLead = function () {
+            console.log($scope.lead);
+        };
+
     }]);
 })();

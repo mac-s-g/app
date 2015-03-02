@@ -4,7 +4,7 @@
       'mobile-angular-ui',
       'App.controllers.Main',
       'App.controllers.Alerts',
-      'App.controllers.Calender',
+      'App.controllers.Calendar',
       'App.controllers.Leads',
       'App.controllers.Settings',
       'App.controllers.Stats',
@@ -42,8 +42,8 @@
             reloadOnSearch: false,
             css: 'css/settings_partial.css'
         });
-        $routeProvider.when('/calender', {
-            templateUrl:'calender.html',
+        $routeProvider.when('/calendar', {
+            templateUrl:'calendar.html',
             reloadOnSearch: false,
             css: 'css/calendar_partial.css'
         });
