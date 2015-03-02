@@ -1,23 +1,33 @@
 <div ng-controller="UploadController as uploadCtrl" class="container">
-    <div class="container">
-        <form ng-submit="uploadCtrl.uploadLead()">
-            <div class="form-group">
-                <label for="input-first-name">First Name</label>
-                <input type="text" class="form-control" id="input-first-name" placeholder="First Name">
-            </div>
-            <div class="form-group">
-                <label for="input-last-name">Last Name</label>
-                <input type="text" class="form-control" id="input-last-name" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-                <label for="input-email">Email</label>
-                <input type="email" class="form-control" id="input-email" placeholder="Email">
-            </div>
-            <div class="form-group">
-                <label for="input-email">Phone</label>
-                <input type="text" class="form-control" id="input-phone" placeholder="Phone">
-            </div>
-            <button type="submit" class="btn btn-primary submit-btn">Upload</button>
-        </form>
+    <div class="upload-title-container">
+        <i class="fa fa-user fa-3x"></i><span class="upload-lead-title-text">Upload a Lead</span>
     </div>
+    <form ng-submit="uploadLead()" name="uploadLead" novalidate>
+        <div class="form-group">
+            <label for="input-first-name">First Name</label>
+            <input type="text" name="firstName" class="form-control" id="input-first-name" placeholder="First Name" ng-model="lead.first_name" ng-pattern="word" required>
+            <div ng-show="false" class="help-block">
+                Give us the lead's first name!
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-last-name">Last Name</label>
+            <input type="text" class="form-control" id="input-last-name" placeholder="Last Name" ng-model="lead.last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="input-email">Email</label>
+            <input type="email" class="form-control" id="input-email" placeholder="Email" ng-model="lead.email" required>
+        </div>
+        <div class="form-group">
+            <label for="input-email">Phone</label>
+            <input type="text" class="form-control" id="input-phone" placeholder="Phone" ng-model="lead.phone" required>
+        </div>
+        <div class="form-group">
+            <label for="input-campaign">Messaging Campaign</label>
+            <select class="form-control" ng-model="lead.messaging_campaign" ng-options="campaign as campaign.id for campaign in messaging_campaigns"></select>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Upload</button>
+    </form>
+    {{lead}}
+    {{submitted}}
 </div>
