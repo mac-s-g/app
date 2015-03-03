@@ -50,7 +50,11 @@
 	  <!-- App Body -->
 	  <div class="app-body">
 		<div class="app-content" ng-class="{'page-fade-out': mainCtrl.fade_out, 'page-fade-in': mainCtrl.fade_in}">
-		  <ng-view></ng-view>
+			<div class="scrollable">
+				<div class="scrollable-content">
+		 			<ng-view class="template-container"></ng-view>
+		 		</div>
+		 	</div>
 		</div>
 	  </div>
 
