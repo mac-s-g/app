@@ -29,9 +29,22 @@ module.exports = function(config) {
   // Set to false to disable it:
   config.weinre = false;
 
-  // 3rd party components
+  /* js dependencies */
   // config.vendor.js.push('.bower_components/lib/dist/lib.js');
   // config.vendor.fonts.push('.bower_components/font/dist/*');
+  // chartist js
   config.vendor.js.push('./bower_components/chartist/dist/chartist.js');
+  // angular carousel js
+  config.vendor.js.push('./bower_components/angular-carousel/dist/angular-carousel.js');
+  // angular touch js
+  config.vendor.js.push('./bower_components/angular-touch/angular-touch.js');
+
+  /* css dependencies */
+  //custom app css
+  config.vendor.css.push('./src/css/*.css');
+  //chartist dependency
+  config.vendor.css.push('./bower_components/chartist/dist/chartist.min.css');
+  //angular carousel dependency
+  config.vendor.css.push('./bower_components/angular-carousel/dist/angular-carousel.css');
 
 };
