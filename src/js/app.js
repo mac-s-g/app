@@ -8,7 +8,7 @@
       'App.controllers.Leads',
       'App.controllers.Settings',
       'App.controllers.Stats',
-      'App.controllers.Upload'
+      'App.controllers.Upload',
     ]);
 
     app.config(function($routeProvider) {
