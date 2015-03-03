@@ -13,12 +13,13 @@ var config = {
     js: [
       './bower_components/angular/angular.js',
       './bower_components/angular-route/angular-route.js',
-      './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js',
+      './bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.js'
     ],
 
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*'
-    ]
+    ],
+    css: []
   },
 
   server: {
@@ -203,12 +204,7 @@ gulp.task('less', function () {
 ====================================================================*/
 
 gulp.task('css', function () {
-    gulp.src([
-    	//app specific css
-    	'./src/css/*.css',
-    	//chartist stylesheet
-    	'./bower_components/chartist/dist/chartist.min.css'
-    	])
+    gulp.src(config.vendor.css)
         .pipe(minifyCSS())
         .pipe(gulp.dest(path.join(config.dest, 'css')));
 });

@@ -7,7 +7,7 @@
       'App.controllers.Calendar',
       'App.controllers.Leads',
       'App.controllers.Settings',
-      'App.controllers.Stats',
+      'App.controllers.Performance',
       'App.controllers.Upload'
     ]);
 
