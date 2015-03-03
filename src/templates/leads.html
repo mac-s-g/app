@@ -1,3 +1,18 @@
-<div ng-controller="LeadsController as leads">
-	<pre>{{leads.message}}</pre>
+<div ng-controller="LeadsController as leads" class="container">
+	<div class="table-responsive">
+		<table class="table">
+			<tr>
+				<th>First</th>
+				<th>Last</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+			<tr ng-repeat="lead in response.data">
+				<td>{{lead.first_name}}</td>
+				<td>{{lead.last_name}}</td>
+				<td>{{lead.phone}}</td>
+				<td>{{lead.email}}</td>
+			</tr>
+		</table>
+	</div>
 </div>

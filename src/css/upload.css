@@ -1,1 +1,8 @@
 /* partial css for lead upload page */
+.form-alert {
+    margin-top:5px;
+    margin-bottom: 0;
+}
+.error-icon {
+	margin-right:5px;
+}
