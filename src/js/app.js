@@ -7,8 +7,8 @@
       'App.controllers.Calendar',
       'App.controllers.Leads',
       'App.controllers.Settings',
-      'App.controllers.Stats',
-      'App.controllers.Upload',
+      'App.controllers.Performance',
+      'App.controllers.Upload'
     ]);
 
     app.config(function($routeProvider) {
