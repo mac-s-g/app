@@ -18,7 +18,7 @@
             reloadOnSearch: false,
             css: 'css/home.css'
         });
-            $routeProvider.when('/alerts', {
+        $routeProvider.when('/alerts', {
             templateUrl:'alerts.html',
             reloadOnSearch: false,
             css: 'css/alerts.css'

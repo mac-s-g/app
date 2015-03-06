@@ -38,9 +38,9 @@
             ng-options="campaign as campaign.name for campaign in messaging_campaigns" required>
                 <option value="">Select One</option>
             </select>
-            <div ng-show="uploadLeadForm.messagingCampaign.$error.required && submitted" class="alert alert-danger form-alert">
+            <div ng-show="lead.messaging_campaign.value.length && submitted" class="alert alert-danger form-alert">
                 <i class="fa fa-exclamation-triangle error-icon"></i>Oops! Forgot the lead's campaign!
-            </div>              
+            </div>
         </div>
         <button type="submit" class="btn btn-primary submit-btn"><i class="fa fa-upload" style="margin-right:5px;"></i>Upload</button>
     </form>
