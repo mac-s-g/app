@@ -7,10 +7,12 @@
     app.controller(
         'MainController',
         [
+        'SharedState',
+        '$route',
         '$scope',
         '$location',
         '$timeout',
-        function($scope, $location, $timeout) {
+        function(SharedState, $route, $scope, $location, $timeout) {
             var that = this;
             this.fade_in = false;
             this.fade_out = false;
@@ -20,24 +22,44 @@
 
             // Declare all other ng-click locations
             $scope.showHome = function() {
+                console.log($location.url());
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('');
             }
             $scope.showAlerts = function () {
+                console.log($location.url());
+
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('alerts');
             }
             $scope.showLeads = function () {
+                console.log($location.url());
+
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('leads');
             }
             $scope.showPerformance = function () {
+                console.log($location.url());
+
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('performance');
             }
             $scope.showUpload = function () {
+                console.log($location.url());
+
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('upload');
             }
             $scope.showSettings = function () {
+                console.log($location.url());
+
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('settings');
             }
             $scope.showCalendar = function () {
+                console.log($location.url());
+                
+                SharedState.turnOff('uiSidebarLeft');
                 fadeToPage('calendar');
             }
 
