@@ -38,6 +38,12 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/angular-carousel/dist/angular-carousel.js');
   // angular touch js
   config.vendor.js.push('./bower_components/angular-touch/angular-touch.js');
+  //angular bootstrap calendar
+  config.vendor.js.push('./bower_components/moment/moment.js');
+  // config.vendor.js.push('./bower_components/angular-ui-bootstrap/src/*/*.js');
+  config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap-tpls.js');
+  config.vendor.js.push('./bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js');
+
 
   /* css dependencies */
   //custom app css
@@ -46,5 +52,10 @@ module.exports = function(config) {
   config.vendor.css.push('./bower_components/chartist/dist/chartist.min.css');
   //angular carousel dependency
   config.vendor.css.push('./bower_components/angular-carousel/dist/angular-carousel.css');
+  //angular bootstrap calendar
+  config.vendor.css.push('./bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css');
+
+  /* templates */
+  config.vendor.templates.push('src/templates/**/*.html');
 
 };
