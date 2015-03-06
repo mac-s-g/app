@@ -1,1 +1,6 @@
 /* partial css for performance page */
+
+.page-content > ul[rn-carousel] {
+    overflow: inherit;
+    width: 100%;
+}

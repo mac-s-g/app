@@ -19,7 +19,8 @@ var config = {
     fonts: [
       './bower_components/font-awesome/fonts/fontawesome-webfont.*'
     ],
-    css: []
+    css: [],
+    templates: []
   },
 
   server: {
@@ -220,7 +221,7 @@ gulp.task('js', function() {
     streamqueue({ objectMode: true },
       gulp.src(config.vendor.js),
       gulp.src('./src/js/**/*.js').pipe(ngFilesort()),
-      gulp.src(['src/templates/**/*.html']).pipe(templateCache({ module: 'App' }))
+      gulp.src(config.vendor.templates).pipe(templateCache({ module: 'App' }))
     )
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))

@@ -2,13 +2,16 @@
     var app = angular.module('App', [
       'ngRoute',
       'mobile-angular-ui',
+      'angular-carousel',
+      'ui.bootstrap',
+      'mwl.calendar',
       'App.controllers.Main',
       'App.controllers.Alerts',
       'App.controllers.Calendar',
       'App.controllers.Leads',
       'App.controllers.Settings',
       'App.controllers.Performance',
-      'App.controllers.Upload'
+      'App.controllers.Upload',
     ]);
 
     app.config(function($routeProvider) {

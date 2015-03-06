@@ -8,6 +8,8 @@
     "mobile-angular-ui": "1.2.x",
     "font-awesome": "4.3.0",
     "bootstrap": "3.x",
-    "chartist": "~0.7.3"
+    "chartist": "~0.7.3",
+    "angular-ui-bootstrap": "0.12.1",
+    "angular-ui-calendar": "latest"
   }
 }

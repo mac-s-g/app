@@ -47,10 +47,16 @@
   vertical-align: bottom;
   color:#555;
 }
+
 .title-icon {
   color:#007aff;
   font-size:55px;
 }
+
 .template-container {
   margin-bottom: 15px;
+}
+
+.page-content {
+
 }
