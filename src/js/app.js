@@ -3,6 +3,8 @@
       'ngRoute',
       'mobile-angular-ui',
       'angular-carousel',
+      'ui.bootstrap',
+      'mwl.calendar',
       'App.controllers.Main',
       'App.controllers.Alerts',
       'App.controllers.Calendar',
