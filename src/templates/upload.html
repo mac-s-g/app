@@ -22,7 +22,7 @@
             <label for="input-email">Email</label>
             <input type="email" name="email" class="form-control" id="input-email" placeholder="Email" ng-model="lead.email" required>
             <div ng-show="uploadLeadForm.email.$invalid && submitted" class="alert alert-danger form-alert">
-                <i class="fa fa-exclamation-triangle error-icon"></i>Oope! Forgot the lead's email!
+                <i class="fa fa-exclamation-triangle error-icon"></i>Oops! Forgot the lead's email!
             </div>            
         </div>
         <div class="form-group">
@@ -38,10 +38,11 @@
             ng-options="campaign as campaign.name for campaign in messaging_campaigns" required>
                 <option value="">Select One</option>
             </select>
-            <div ng-show="lead.messaging_campaign.value.length && submitted" class="alert alert-danger form-alert">
+            <div ng-show="uploadLeadForm.messagingCampaign.$invalid && submitted" class="alert alert-danger form-alert">
                 <i class="fa fa-exclamation-triangle error-icon"></i>Oops! Forgot the lead's campaign!
             </div>
         </div>
         <button type="submit" class="btn btn-primary submit-btn"><i class="fa fa-upload" style="margin-right:5px;"></i>Upload</button>
     </form>
+    <pre>{{lead}}</pre>
 </div>

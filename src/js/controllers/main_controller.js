@@ -14,6 +14,7 @@
         '$timeout',
         function(SharedState, $route, $scope, $location, $timeout) {
             var that = this;
+            this.current_page = 'home';
             this.fade_in = false;
             this.fade_out = false;
 
@@ -22,62 +23,67 @@
 
             // Declare all other ng-click locations
             $scope.showHome = function() {
-                console.log($location.url());
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('');
+                if (this.current_page != 'home') {
+                    fadeToPage('');
+                }
+                this.current_page = 'home';
             }
             $scope.showAlerts = function () {
-                console.log($location.url());
-
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('alerts');
+                if (this.current_page != 'alerts') {
+                    fadeToPage('alerts');
+                }
+                this.current_page = 'alerts';
             }
             $scope.showLeads = function () {
-                console.log($location.url());
-
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('leads');
+                if (this.current_page != 'leads') {
+                    fadeToPage('leads');
+                }
+                this.current_page = 'leads';
             }
             $scope.showPerformance = function () {
-                console.log($location.url());
-
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('performance');
+                if (this.current_page != 'performance') {
+                    fadeToPage('performance');
+                }
+                this.current_page = 'performance';
             }
             $scope.showUpload = function () {
-                console.log($location.url());
-
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('upload');
+                if (this.current_page != 'upload') {
+                    fadeToPage('upload');
+                }
+                this.current_page = 'upload';
             }
             $scope.showSettings = function () {
-                console.log($location.url());
-
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('settings');
+                if (this.current_page != 'settings') {
+                    fadeToPage('settings');
+                }
+                this.current_page = 'settings';
             }
             $scope.showCalendar = function () {
-                console.log($location.url());
-                
                 SharedState.turnOff('uiSidebarLeft');
-                fadeToPage('calendar');
+                if (this.current_page != 'calendar') {
+                    fadeToPage('calendar');
+                }
+                this.current_page = 'calendar';
             }
 
             // Declare page fading
-            function fadeToPage(path)
-            {
+            function fadeToPage(path) {
                 that.fade_in = false;
                 that.fade_out = true;
                 //0.2s fade fade out
                 $timeout(function(){
                     changePage(path);
-
-                },200);
+                }, 200);
             }
 
             // Change path method
-            function changePage(path)
-            {
+            function changePage(path) {
                 $location.path('/' + path);
                 that.fade_out = false;
                 that.fade_in = true;
