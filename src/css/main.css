@@ -49,14 +49,43 @@
 }
 
 .title-icon {
-  color:#007aff;
+  color:#3498db;
   font-size:55px;
 }
 
 .template-container {
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
+  height: 100%
 }
 
 .page-content {
 
+}
+
+.ng-scope .navbar-app .btn, .navbar-app .btn-navbar {
+    color: #3498db;
+}
+
+.upload i {
+    color: #375a7f;
+}
+.calendar i {
+    color: #00bc8c;
+}
+.leads i {
+    color: #3498db;
+}
+.alerts i {
+    color: #f39c12;
+}
+.performance i {
+    color: #e74c3c;
+}
+.settings i {
+    color: #999;
+}
+
+.ng-scope .btn-primary {
+  background-color: #3498db;
+  border-color: #375a7f;
 }

@@ -13,11 +13,14 @@
     display:inline-block;
     vertical-align:text-bottom;
 }
-.nav-icon {
+i.nav-icon {
     margin-right: 10px;
-    color:#007aff;
 }
 .home-icon {
 	color:#555;
     margin-right: 5px;
+}
+
+.sidebar .pull-right {
+    color: #555;
 }

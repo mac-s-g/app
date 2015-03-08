@@ -8,10 +8,11 @@
     font-size: 20px;
     font-weight: bold;
     margin-top:10px;
-    color:#555;
+    color:#888;
 }
 .home-container {
     height:100%;
+    background-color: white;
 }
 .home-container-panel {
     margin-top:50px;
@@ -22,3 +23,23 @@
     text-align: center;
     margin-bottom:60px;
 }
+
+.home-container-panel .home-row .upload i {
+    color: #375a7f;
+}
+.home-container-panel .home-row .calendar i {
+    color: #00bc8c;
+}
+.home-container-panel .home-row .leads i {
+    color: #3498db;
+}
+.home-container-panel .home-row .alerts i {
+    color: #f39c12;
+}
+.home-container-panel .home-row .performance i {
+    color: #e74c3c;
+}
+.home-container-panel .home-row .settings i {
+    color: #999;
+}
+
