@@ -10,6 +10,7 @@
     "bootstrap": "3.x",
     "chartist": "~0.7.3",
     "angular-ui-bootstrap": "0.12.1",
-    "angular-ui-calendar": "latest"
+    "angular-ui-calendar": "latest",
+    "angular-bootstrap": "latest"
   }
 }
