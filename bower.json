@@ -7,9 +7,12 @@
     "angular-route": "1.x",
     "mobile-angular-ui": "1.2.x",
     "font-awesome": "4.3.0",
+    "moment": "2.9.0",
     "bootstrap": "3.x",
     "chartist": "~0.7.3",
     "angular-ui-bootstrap": "0.12.1",
-    "angular-ui-calendar": "latest"
+    "angular-ui-calendar": "latest",
+    "angular-bootstrap": "latest",
+    "angular-bootstrap-calendar": "~0.7.4"
   }
 }
