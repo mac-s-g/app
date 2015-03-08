@@ -5,3 +5,13 @@
     width: 100%;
 }
 
+.chart-container {
+    /*height: 40%;*/
+}
+
+.image {
+    height: 300px;
+}
+.image * {
+    height: 300px;
+}
