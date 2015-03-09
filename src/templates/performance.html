@@ -4,12 +4,18 @@
     </div>
 
     <div class="page-content">
-        <ul rn-carousel class="image">
-          <li><div id="chart-1" class="ct-chart"></div></li>
-          <li><div id="chart-2" class="ct-chart"></div></li>
-          <li><div id="chart-3" class="ct-chart"></div></li>
-          <li><div id="chart-4" class="ct-chart"></div></li>
+      <div class="chart-container">
+        <ul rn-carousel class="image" toggle-class-target="full-screen-chart">
+<!--           <li ng-repeat="(i,chart) in performanceCtrl.charts">
+            <div id="chart-{{i+1}}" class="ct-chart"></div>
+            <i toggle-class="full-screen-chart fa-expand fa-compress" class="fa fa-expand fa-2" re-draw></i>
+          </li> -->
+          <li>
+            <div id="chart-1" class="ct-chart"></div>
+            <i toggle-class="full-screen-chart fa-expand fa-compress" class="fa fa-expand fa-2" re-draw></i>
+          </li>
         </ul>
+      </div>
     </div>
 
 </div>
