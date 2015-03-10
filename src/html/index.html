@@ -34,6 +34,7 @@
 		<script src="http://fgnass.github.io/spin.js/spin.min.js"></script>
 		<script src="js/app.min.js"></script>
 	</head>
+	<!-- App, controller, swipe definition -->
   	<body ng-app="App" ng-controller="MainController as mainCtrl" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
 	<!-- Sidebars -->
@@ -53,10 +54,14 @@
 
 		<!-- App Body -->
 		<div class="app-body" >
+			<!-- Fade-in fade-out -->
 			<div class="app-content" ng-class="{'page-fade-out': mainCtrl.fade_out, 'page-fade-in': mainCtrl.fade_in}">
+				<!-- Enable scrolling on all templates -->
 				<div class="scrollable">
 					<div class="scrollable-content">
-						<div loading-spinner datasource="{{viewLoading}}">
+						<!-- AJAX loading spinner directive -->
+						<div loading-spinner>
+							<!-- Template container -->
 							<div ng-view class="template-container"></div>
 						</div>
 					</div>
