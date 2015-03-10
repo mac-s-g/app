@@ -5,3 +5,36 @@
     width: 100%;
 }
 
+.chart-container {
+    /*height: 40%;*/
+}
+
+/*.image {
+    height: 300px;
+}*/
+.image, .image * {
+    height: 300px;
+}
+.image.full-screen-chart, .image.full-screen-chart * {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    z-index: 2000;
+    background-color: white;
+}
+
+.chart-container .image i.fa.fa-2 {
+    width: auto;
+    height: auto;
+    color: #3498db;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: 2px solid #3498db;
+    padding: 3px;
+    border-radius: 8px;
+}
+

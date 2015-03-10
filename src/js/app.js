@@ -13,6 +13,8 @@
       'App.controllers.Settings',
       'App.controllers.Performance',
       'App.controllers.Upload',
+      //custom directives
+      'App.directives.toggleClass'
     ]);
 
     app.config(function($routeProvider) {
