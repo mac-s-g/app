@@ -2,17 +2,17 @@
     <div class="title-container leads">
         <i class="fa fa-users fa-3x title-icon"></i><span class="title-text">My Leads</span>
     </div>
-    <!-- good -->
-	<div class="list-group" style="margin-top:15px">
-		<div ng-repeat="lead in response.data" ng-init="tabs[lead.id] = false">
-			<div class="list-group-item">
-				<div ng-click="tabs[lead.id] = !tabs[lead.id]">
-					<div style="font-size:20px">
-						{{lead.first_name}} {{lead.last_name}}
-						<i ng-class="{false:'fa fa-chevron-right pull-right', true:'fa fa-chevron-right pull-right fa-rotate-90'}[tabs[lead.id]]"></i>
-					</div>
-				</div>
-				<div ng-show="tabs[lead.id]" style="margin-top:5px">
+	<div class="panel-group" style="margin-top:15px">
+		<div class="panel panel-default" ng-repeat="lead in response.data" ng-init="tabs[lead.id] = false">
+			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
+				<h4 class="panel-title">
+					<span>{{lead.first_name}} {{lead.last_name}}</span></a>
+					<i ng-class="{false:'fa fa-chevron-right pull-right', true:'fa fa-chevron-right pull-right fa-rotate-90'}[tabs[lead.id]]"></i>
+				</h4>
+			</div>
+			<div class="panel-collapse" collapse="!tabs[lead.id]">
+				<div class="panel-body">
+				{{lead}}
 					<div class="row">
 						<div class="col-xs-2">
 							<i class="fa fa-envelope"></i>
@@ -33,42 +33,4 @@
 			</div>
 		</div>
 	</div>
-
- <!-- testing -->
-<!-- 	<div class="list-group" style="margin-top:15px">
-		<div ng-repeat="lead in response.data" ng-init="tabs[lead.id] = false">
-			<div class="list-group-item">
-				<div ng-click="tabs[lead.id] = !tabs[lead.id]">
-					<div style="font-size:20px">
-						{{lead.first_name}} {{lead.last_name}}
-						<i ng-class="{false:'fa fa-chevron-right pull-right', true:'fa fa-chevron-right pull-right fa-rotate-90'}[tabs[lead.id]]"></i>
-					</div>
-				</div>
-				<div ng-show="tabs[lead.id]" style="margin-top:5px">
-					<div class="row">
-						<div class="col-xs-2">
-							<i class="fa fa-envelope"></i>
-						</div>
-						<div class="col-xs-10">
-							<a href="mailto:{{lead.email}}" style="text-decoration:none;">{{lead.email}}</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-2">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="col-xs-10">
-							{{lead.phone}}
-						</div>
-					</div>
-					<ul class="list-group">
-						<dl class="dl-horizontal list-group-item">
-							<dt>{{lead.email}}</dt>
-							<dt>{{lead.phone}}</dt>
-						</dl>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>	 -->
 </div>

@@ -46,6 +46,8 @@ module.exports = function(config) {
   //mobile angular ui overlay directive
   config.vendor.js.push('./bower_components/mobile-angular-ui/src/js/migrate/overlay.js');
 
+  config.vendor.js.push('./bower_components/mobile-angular-ui/src/js/migrate/overlay.js');
+
 
   /* css dependencies */
   //custom app css

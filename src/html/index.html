@@ -31,14 +31,16 @@
 		<!-- addition of col_ms for gridsystem breakpoint between 760 and 480px -->
 		<link rel="stylesheet" href="css/col_ms.css"/>
 		<!-- inject:js -->
+		<script src="http://fgnass.github.io/spin.js/spin.min.js"></script>
 		<script src="js/app.min.js"></script>
 	</head>
-  	<body ng-app="App" ng-controller="MainController as mainCtrl">
+  	<body ng-app="App" ng-controller="MainController as mainCtrl" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
 	<!-- Sidebars -->
 	<div ng-include="'sidebar.html'" ui-track-as-search-param='true' class="sidebar sidebar-left"></div>
 
-	<div class="app main-container" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
+	<!-- Main container -->
+	<div class="app main-container">
 
 	  	<!-- Navbars -->
 		<div class="navbar navbar-app navbar-absolute-top app-nav">
@@ -54,13 +56,15 @@
 			<div class="app-content" ng-class="{'page-fade-out': mainCtrl.fade_out, 'page-fade-in': mainCtrl.fade_in}">
 				<div class="scrollable">
 					<div class="scrollable-content">
-						<div ng-view class="template-container"></div>
+						<div loading-spinner datasource="{{viewLoading}}">
+							<div ng-view class="template-container"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-	</div>
-		<div ui-yield-to="modals"></div>
-	</body>
+		</div>
+			<div ui-yield-to="modals"></div>
+		</body>
 </html>
