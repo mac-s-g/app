@@ -1,9 +1,22 @@
 <div ng-controller="LeadsController as leads" class="container">
-    <div class="title-container leads">
+    <div class="title-container leads" style="margin-bottom:15px">
         <i class="fa fa-users fa-3x title-icon"></i><span class="title-text">My Leads</span>
     </div>
-	<div class="panel-group" style="margin-top:15px">
-		<div class="panel panel-default" ng-repeat="lead in response.data" ng-init="tabs[lead.id] = false">
+
+<!--     <table style="margin-bottom:10px;">
+    	<tr>
+    		<td><i class="fa fa-search fa-2x"></i></td>
+    		<td><input ng-model="query[queryBy]" cvlass="form-control search-input"></td>
+    	</tr>  	
+   	</table> -->
+   	<div class="row search-container-row">
+   		<div class="col-xs-12 search-container-col">
+			<i class="fa fa-search fa-2x search-input-icon" toggle-class="search-input-focused"></i>
+			<input ng-model="query[queryBy]" class="form-control search-input" toggle-class-target="search-input-focused">
+   		</div>
+   	</div>
+	<div class="panel-group">
+		<div class="panel panel-default" ng-repeat="lead in response.data | orderBy: 'first_name' | filter:query" ng-init="tabs[lead.id] = false">
 			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
 				<h4 class="panel-title">
 					<span>{{lead.first_name}} {{lead.last_name}}</span></a>

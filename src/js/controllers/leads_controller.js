@@ -3,6 +3,8 @@
     app.controller('LeadsController', ['$http', '$scope', function($http, $scope) {
     	$scope.response = {};
         $scope.tabs = {};
+        $scope.query = {}
+        $scope.queryBy = '$'
 
         $scope.toggleOpen = function(id) {
             for (var i in $scope.tabs) {
