@@ -2,6 +2,7 @@
     var app = angular.module('App', [
       'ngRoute',
       'mobile-angular-ui',
+      'App.directives.loadingSpinner',
       'angular-carousel',
       'ui.bootstrap',
       'mwl.calendar',

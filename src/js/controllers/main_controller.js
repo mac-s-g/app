@@ -12,11 +12,21 @@
         '$scope',
         '$location',
         '$timeout',
-        function(SharedState, $route, $scope, $location, $timeout) {
+        '$rootScope',
+        function(SharedState, $route, $scope, $location, $timeout, $rootScope) {
             var that = this;
             this.current_page = 'home';
             this.fade_in = false;
             this.fade_out = false;
+
+            // Loading flag and event listeners
+            $scope.viewLoading = true;
+            $scope.$on('Load', function () {
+                $scope.viewLoading = true;
+            });
+            $scope.$on('Unload', function () {
+                $scope.viewLoading = false;
+            });
 
             // Set default location
             $location.path('/');
