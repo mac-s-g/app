@@ -6,6 +6,12 @@
         $scope.query = {}
         $scope.queryBy = '$'
 
+        $scope.toTimestamp = function(date) {
+            var new_date = new Date(date);
+            console.log(new_date);
+            return new_date;
+        };
+
         $scope.toggleOpen = function(id) {
             for (var i in $scope.tabs) {
                 if ($scope.tabs[i] != 'undefined' && i != id) {
