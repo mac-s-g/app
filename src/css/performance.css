@@ -9,10 +9,12 @@
     /*height: 40%;*/
 }
 
-/*.image {
-    height: 300px;
-}*/
-.image, .image * {
+.chart-container .image {
+    overflow: visible;
+    margin-left: -10px;
+}
+/*.image, */
+.image * {
     height: 300px;
 }
 .image.full-screen-chart,
@@ -42,3 +44,78 @@
     border-radius: 8px;
 }
 
+.chart-container .chart-summary
+{
+    height: auto;
+    padding: 15px 30px;
+}
+.chart-container .chart-summary *
+{
+    height: auto;
+}
+
+.chart-container .hidden-content
+{
+    display: none;
+}
+
+
+
+/* colors! */
+.ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a
+.ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart
+.ct-series.ct-series-a .ct-slice.ct-donut
+{
+    stroke: #e74c3c;
+}
+.chart-container .color-1 {
+    background-color: #e74c3c;
+
+}
+
+.ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b
+.ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart
+.ct-series.ct-series-b .ct-slice.ct-donut
+{
+    stroke: #f39c12;
+}
+.chart-container .color-2 {
+    background-color: #f39c12;
+}
+
+.ct-chart .ct-series.ct-series-c .ct-bar, .ct-chart .ct-series.ct-series-c
+.ct-line, .ct-chart .ct-series.ct-series-c .ct-point, .ct-chart
+.ct-series.ct-series-c .ct-slice.ct-donut
+{
+    stroke: #3498db;
+}
+.chart-container .color-3 {
+    background-color: #3498db;
+}
+
+.chart-container .chart-color
+{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border-radius: 4px;
+}
+.chart-container .color-description
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 3px;
+}
+.chart-container .chart-colors
+{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.chart-container .chart-description-title
+{
+    color: #999;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
