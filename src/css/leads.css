@@ -1,1 +1,31 @@
-/* partial css for leads page */
+.search-input {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: block;
+	width: 35px;
+
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.search-input-focused {
+    width:100%;
+    padding-left:35px;
+}
+.search-input-icon {
+	position: absolute;
+	top:3px;
+	left:20px;
+}
+.search-container-col {
+	position:relative;
+}
+.search-container-row {
+	margin-bottom:10px;
+}
+dd {
+	margin-left: 10px;
+}
+.lead-item-icon {
+	margin-right:5px;
+}

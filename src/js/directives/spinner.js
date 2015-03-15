@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('App.directives.loadingSpinner', ['App.controllers.Main']);
+    var app = angular.module('App.directives.loadingSpinner', []);
     app.directive('loadingSpinner', function() {
         return {
           restrict: 'A',
