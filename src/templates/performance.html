@@ -4,21 +4,68 @@
     </div>
 
     <div class="page-content">
-      <div class="chart-container">
+      <div class="chart-container" ng-swipe-right="$event.stopPropagation();">
         <ul rn-carousel class="image" toggle-class-target="full-screen-chart">
-<!--           <li ng-repeat="(i,chart) in performanceCtrl.charts">
+<!--           <li ng-repeat="(i,chart) in performanceCtrl.chart_params">
             <div id="chart-{{i+1}}" class="ct-chart"></div>
             <i toggle-class="full-screen-chart fa-expand fa-compress" class="fa fa-expand fa-2" re-draw></i>
           </li> -->
-          <li>
+          <li ng-swipe-right='Ui.turnOn("uiSidebarLeft")'>
             <div id="chart-1" class="ct-chart"></div>
-            <i toggle-class="full-screen-chart fa-expand fa-compress"
+            <i toggle-class="full-screen-chart fa-expand fa-compress hidden-content"
+            toggle-class-target="fa-expand fa-compress"
             class="fa fa-expand fa-2" re-draw style="z-index:3000;"></i>
+            <div class="chart-summary" toggle-class-target="hidden-content">
+              <div class="chart-colors">
+                <div ng-repeat="(i,chart) in performanceCtrl.chart_params[0].options.series"
+                class="color-description-contianer">
+                  <div class="chart-color color-{{i+1}}"></div>
+                  <div class="color-description">Data Set {{i+1}} Description</div>
+                </div>
+              </div>
+              <div class="chart-description-title">Description</div>
+              <div class="chart-description">
+                {{performanceCtrl.chart_params[0].description}}
+              </div>
+            </div>
           </li>
           <li>
             <div id="chart-2" class="ct-chart"></div>
-            <i toggle-class="full-screen-chart fa-expand fa-compress"
+            <i toggle-class="full-screen-chart fa-expand fa-compress hidden-content"
+            toggle-class-target="fa-expand fa-compress"
             class="fa fa-expand fa-2" re-draw style="z-index:3000;"></i>
+            <div class="chart-summary" toggle-class-target="hidden-content">
+              <div class="chart-colors">
+                <div ng-repeat="(i,chart) in performanceCtrl.chart_params[1].options.series"
+                class="color-description-contianer">
+                  <div class="chart-color color-{{i+1}}"></div>
+                  <div class="color-description">Data Set {{i+1}} Description</div>
+                </div>
+              </div>
+              <div class="chart-description-title">Description</div>
+              <div class="chart-description">
+                {{performanceCtrl.chart_params[1].description}}
+              </div>
+            </div>
+          </li>
+          <li>
+            <div id="chart-3" class="ct-chart"></div>
+            <i toggle-class="full-screen-chart fa-expand fa-compress hidden-content"
+            toggle-class-target="fa-expand fa-compress"
+            class="fa fa-expand fa-2" re-draw style="z-index:3000;"></i>
+            <div class="chart-summary"  toggle-class-target="hidden-content">
+              <div class="chart-colors">
+                <div ng-repeat="(i,chart) in performanceCtrl.chart_params[2].options.series"
+                class="color-description-contianer">
+                  <div class="chart-color color-{{i+1}}"></div>
+                  <div class="color-description">Data Set {{i+1}} Description</div>
+                </div>
+              </div>
+              <div class="chart-description-title">Description</div>
+              <div class="chart-description">
+                {{performanceCtrl.chart_params[2].description}}
+              </div>
+            </div>
           </li>
         </ul>
       </div>
