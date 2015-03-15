@@ -71,8 +71,7 @@ var gulp           = require('gulp'),
     ngFilesort     = require('gulp-angular-filesort'),
     streamqueue    = require('streamqueue'),
     rename         = require('gulp-rename'),
-    path           = require('path'),
-    minifyCSS      = require('gulp-minify-css');
+    path           = require('path');
 
 
 /*================================================
@@ -206,7 +205,7 @@ gulp.task('less', function () {
 
 gulp.task('css', function () {
     gulp.src(config.vendor.css)
-        .pipe(minifyCSS())
+        .pipe(cssmin())
         .pipe(gulp.dest(path.join(config.dest, 'css')));
 });
 
