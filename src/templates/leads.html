@@ -1,9 +1,15 @@
 <div ng-controller="LeadsController as leads" class="container">
-    <div class="title-container leads">
+    <div class="title-container leads" style="margin-bottom:15px">
         <i class="fa fa-users fa-3x title-icon"></i><span class="title-text">My Leads</span>
     </div>
-	<div class="panel-group" style="margin-top:15px">
-		<div class="panel panel-default" ng-repeat="lead in response.data" ng-init="tabs[lead.id] = false">
+   	<div class="row search-container-row">
+   		<div class="col-xs-12 search-container-col">
+			<i class="fa fa-search fa-2x search-input-icon" toggle-class="search-input-focused"></i>
+			<input ng-model="query[queryBy]" class="form-control search-input" toggle-class-target="search-input-focused">
+   		</div>
+   	</div>
+	<div class="panel-group">
+		<div class="panel panel-default" ng-repeat="lead in response.data | orderBy: 'first_name' | filter:query" ng-init="tabs[lead.id] = false">
 			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
 				<h4 class="panel-title">
 					<span>{{lead.first_name}} {{lead.last_name}}</span></a>
@@ -12,23 +18,23 @@
 			</div>
 			<div class="panel-collapse" collapse="!tabs[lead.id]">
 				<div class="panel-body">
-				{{lead}}
-					<div class="row">
-						<div class="col-xs-2">
-							<i class="fa fa-envelope"></i>
-						</div>
-						<div class="col-xs-10">
-							<a href="mailto:{{lead.email}}" style="text-decoration:none;">{{lead.email}}</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-2">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="col-xs-10">
-							{{lead.phone}}
-						</div>
-					</div>
+					<dl>
+						<dt><i class="fa fa-envelope lead-item-icon"></i>Email</dt>
+						<dd><a href="mailto:{{lead.email}}" style="text-decoration:none;">{{lead.email}}</a></dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-phone lead-item-icon"></i>Phone</dt>
+						<dd>{{lead.phone}}</dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-cogs lead-item-icon"></i>Status</dt>
+						<dd ng-if="lead.active == 1">Active</dd>
+						<dd ng-if="lead.active == 0">Inactive</dd>
+					</dl>
+					<dl>
+						<dt><i class="fa fa-clock-o lead-item-icon"></i>Date Arrived</dt>
+						<dd>{{lead.date_created}}</dd>
+					</dl>
 				</div>
 			</div>
 		</div>
