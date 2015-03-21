@@ -232,6 +232,17 @@ gulp.task('js', function() {
 });
 
 
+/*====================================================================
+=            config.xml                                              =
+====================================================================*/
+// - updates config.xml in www/
+
+gulp.task('config', function () {
+    gulp.src('config.xml')
+        .pipe(gulp.dest(path.join(config.dest)));
+});
+
+
 /*===================================================================
 =            Watch for source changes and rebuild/reload            =
 ===================================================================*/
@@ -266,7 +277,7 @@ gulp.task('weinre', function() {
 ======================================*/
 
 gulp.task('build', function(done) {
-  var tasks = ['html', 'fonts', 'images', 'less', 'css', 'js'];
+  var tasks = ['html', 'fonts', 'images', 'less', 'css', 'js', 'config'];
   seq('clean', tasks, done);
 });
 
