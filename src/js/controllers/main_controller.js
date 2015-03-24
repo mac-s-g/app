@@ -99,17 +99,13 @@
 
 
             //splash screen
-            console.log('before: ' + that.ready);
             angular.element(document).ready(function () {
                 $timeout(function(){
                     that.load_fade = 1;
-                    console.log('fade: ' + that.load_fade);
                 }, SPLASH_DELAY);
                 // that.ready = 1;
                 $timeout(function(){
-                    console.log('delay hit: ' + that.ready);
                     that.ready = 1;
-                    console.log('ready: ' + that.ready);
                 }, FADE_DELAY + SPLASH_DELAY);
             });
 

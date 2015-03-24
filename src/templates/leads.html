@@ -1,11 +1,12 @@
-<div ng-controller="LeadsController as leads" class="container">
+<div ng-controller="LeadsController as leads" class="leads-container container">
     <div class="title-container leads" style="margin-bottom:15px">
         <i class="fa fa-users fa-3x title-icon"></i><span class="title-text">My Leads</span>
     </div>
    	<div class="row search-container-row">
    		<div class="col-xs-12 search-container-col">
-			<i class="fa fa-search fa-2x search-input-icon" toggle-class="search-input-focused"></i>
-			<input ng-model="query[queryBy]" class="form-control search-input" toggle-class-target="search-input-focused">
+			<i class="fa fa-search fa-2x search-input-icon"></i>
+			<input ng-model="query[queryBy]" class="form-control search-input"
+			placeholder="Search for a Lead">
    		</div>
    	</div>
 	<div class="panel-group">
@@ -20,11 +21,15 @@
 				<div class="panel-body">
 					<dl>
 						<dt><i class="fa fa-envelope lead-item-icon"></i>Email</dt>
-						<dd><a href="mailto:{{lead.email}}" style="text-decoration:none;">{{lead.email}}</a></dd>
+						<dd>
+							<a href="mailto:{{lead.email}}" style="text-decoration:none;">{{lead.email}}</a>
+						</dd>
 					</dl>
 					<dl>
 						<dt><i class="fa fa-phone lead-item-icon"></i>Phone</dt>
-						<dd>{{lead.phone}}</dd>
+						<dd>
+							<a href="tel:+{{lead.phone}}" style="text-decoration:none;">{{lead.phone}}</a>
+						</dd>
 					</dl>
 					<dl>
 						<dt><i class="fa fa-cogs lead-item-icon"></i>Status</dt>
@@ -35,6 +40,9 @@
 						<dt><i class="fa fa-clock-o lead-item-icon"></i>Date Arrived</dt>
 						<dd>{{lead.date_created}}</dd>
 					</dl>
+					<button class="btn btn-success btn-lg calendar-button">
+						<i class="fa fa-calendar"></i>
+					</button>
 				</div>
 			</div>
 		</div>
