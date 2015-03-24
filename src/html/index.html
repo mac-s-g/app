@@ -37,6 +37,8 @@
 	<!-- App, controller, swipe definition -->
   	<body ng-app="App" ng-controller="MainController as mainCtrl" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")'>
 
+  	<div id="splash-screen" ng-class="{fade:mainCtrl.load_fade}" ng-show="!mainCtrl.ready"></div>
+
 	<!-- Sidebars -->
 	<div ng-include="'sidebar.html'" ui-track-as-search-param='true' class="sidebar sidebar-left"></div>
 

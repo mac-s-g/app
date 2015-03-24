@@ -1,1 +1,82 @@
 /* partial css for calendar page */
+
+.calendar-container
+{
+    margin-top: 5px;
+}
+
+/*glyph compatibility*/
+.glyphicon
+{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0,0);
+}
+
+.glyphicon-chevron-up:before
+{
+    content: "\f077";
+}
+
+.glyphicon.glyphicon-pencil:before
+{
+    content: "\f040";
+}
+
+.glyphicon.glyphicon-remove:before
+{
+    content: "\f00d";
+}
+
+/*button group container*/
+.calendar-control-container
+{
+    margin-top: 15px;
+    display: block;
+    position: relative;
+}
+.container .calendar-control-container .btn-group
+{
+    margin-bottom: 0.1cm;
+}
+
+.calendar-container .add-event
+{
+    margin: 10px 0px;
+}
+
+/*header*/
+/*.time-window
+{
+    font-weight: 700;
+    font-size: 25px;
+    margin-left: 10px;
+    vertical-align: bottom;
+    color: #555;
+    margin-top: 5px;
+    text-align: center;
+}
+*/
+
+/*.calendar-control-container
+{
+    display: block;
+}*/
+
+.calendar-control-container.calendar-type
+{
+    margin-top: 0px;
+}
+
+@media (min-width:450px) {
+    .calendar-control-container.calendar-type
+    {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+}

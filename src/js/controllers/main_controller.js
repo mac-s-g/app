@@ -14,7 +14,11 @@
         '$timeout',
         '$rootScope',
         function(SharedState, $route, $scope, $location, $timeout, $rootScope) {
+            const SPLASH_DELAY = 300;
+            const FADE_DELAY = 1000;
             var that = this;
+            this.ready = 0;
+            this.load_fade = 0;
             this.current_page = '';
             this.fade_in = false;
             this.fade_out = false;
@@ -92,5 +96,22 @@
                 that.fade_out = false;
                 that.fade_in = true;
             }
+
+
+            //splash screen
+            console.log('before: ' + that.ready);
+            angular.element(document).ready(function () {
+                $timeout(function(){
+                    that.load_fade = 1;
+                    console.log('fade: ' + that.load_fade);
+                }, SPLASH_DELAY);
+                // that.ready = 1;
+                $timeout(function(){
+                    console.log('delay hit: ' + that.ready);
+                    that.ready = 1;
+                    console.log('ready: ' + that.ready);
+                }, FADE_DELAY + SPLASH_DELAY);
+            });
+
         }]);
 })();

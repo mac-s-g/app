@@ -5,6 +5,7 @@
       'App.directives.loadingSpinner',
       'angular-carousel',
       'ui.bootstrap',
+      //ngShow, Hide animations
       'mwl.calendar',
       'App.controllers.Main',
       'App.controllers.Alerts',
