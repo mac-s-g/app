@@ -1,6 +1,7 @@
 (function () {
     var app = angular.module('App.controllers.Leads', []);
     app.controller('LeadsController', ['$http', '$scope', function($http, $scope) {
+        var that = this;
     	$scope.response = {};
         $scope.tabs = {};
         $scope.query = {}
@@ -8,17 +9,16 @@
 
         $scope.toTimestamp = function(date) {
             var new_date = new Date(date);
-            console.log(new_date);
             return new_date;
         };
 
         $scope.toggleOpen = function(id) {
+            $scope.tabs[id] = !$scope.tabs[id];
             for (var i in $scope.tabs) {
                 if ($scope.tabs[i] != 'undefined' && i != id) {
                     $scope.tabs[i] = false;
                 }
             }
-            $scope.tabs[id] = !$scope.tabs[id];
         };
 
         // HTTP GET leads
