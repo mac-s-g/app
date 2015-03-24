@@ -1,18 +1,54 @@
-<div ng-controller="CalendarController as calendar" class="container">
+<div ng-controller="CalendarController as calendarCtrl" class="container">
     <div class="title-container calendar">
-        <i class="fa fa-calendar fa-3x"></i><span class="title-text">Calendar</span>
+        <i class="fa fa-calendar fa-3x"></i><span class="title-text">{{calendarControl.getTitle()}}</span>
     </div>
 
-	<mwl-calendar
-    calendar-events="events"
-    calendar-view="calendarView"
-    calendar-current-day="calendarDay"
-    calendar-control="calendarControl"
-    calendar-event-click="eventClicked($event)"
-    calendar-edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
-    calendar-delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
-    calendar-edit-event-click="eventEdited($event)"
-    calendar-delete-event-click="eventDeleted($event)"
-    calendar-auto-open="true"
-    ></mwl-calendar>
+    <!-- <div class="time-window">{{calendarControl.getTitle()}}</div> -->
+
+    <!-- <div class="row calendar-control-container"> -->
+    <div class="calendar-control-container">
+
+        <!-- <div class="col-xs-12 col-ms-5 col-md-5 col-sm-5 col-lg-5 col-xl-5"> -->
+        <div class="calendar-control">
+          <div class="btn-group">
+
+            <button class="btn btn-primary" ng-click="calendarControl.prev()">Prev</button>
+            <button class="btn btn-default" ng-click="calendarCtrl.setCalendarToToday()">Today</button>
+            <button class="btn btn-primary" ng-click="calendarControl.next()">Next</button>
+          </div>
+        </div>
+
+        <!-- <div class="col-xs-12 col-ms-7 col-md-7 col-sm-7 col-lg-7 col-xl-7"> -->
+        <div class="calendar-control-container calendar-type">
+          <div class="btn-group">
+            <label class="btn btn-primary ng-untouched ng-valid ng-dirty" ng-model="calendarView" btn-radio="'year'">Year</label>
+            <label class="btn btn-primary ng-untouched ng-valid ng-dirty active ng-valid-parse" ng-model="calendarView" btn-radio="'month'">Month</label>
+            <label class="btn btn-primary ng-untouched ng-valid ng-dirty" ng-model="calendarView" btn-radio="'week'">Week</label>
+            <label class="btn btn-primary ng-untouched ng-valid ng-dirty" ng-model="calendarView" btn-radio="'day'">Day</label>
+          </div>
+        </div>
+
+    </div>
+
+
+    <div class='calendar-container'>
+        <mwl-calendar
+        calendar-events="events"
+        calendar-view="calendarView"
+        calendar-current-day="calendarDay"
+        calendar-control="calendarControl"
+        calendar-event-click="eventClicked($event)"
+        calendar-edit-event-html="'<i class=\'fa fa-pencil\'></i>'"
+        calendar-delete-event-html="'<i class=\'fa fa-remove\'></i>'"
+        calendar-edit-event-click="eventEdited($event)"
+        calendar-delete-event-click="eventDeleted($event)"
+        calendar-auto-open="true"
+        ></mwl-calendar>
+
+        <button class="btn btn-primary pull-right add-event"
+        ng-click="events.push({title: 'New Event', type: 'info'})">
+            Add an Event
+        </button>
+    </div>
+
 </div>

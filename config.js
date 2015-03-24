@@ -42,7 +42,7 @@ module.exports = function(config) {
   config.vendor.js.push('./bower_components/moment/moment.js');
   // config.vendor.js.push('./bower_components/angular-ui-bootstrap/src/*/*.js');
   config.vendor.js.push('./bower_components/angular-bootstrap/ui-bootstrap-tpls.js');
-  config.vendor.js.push('./bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js');
+  config.vendor.js.push('./bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js');
   //mobile angular ui overlay directive
   config.vendor.js.push('./bower_components/mobile-angular-ui/src/js/migrate/overlay.js');
 
