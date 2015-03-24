@@ -14,7 +14,7 @@
         '$timeout',
         '$rootScope',
         function(SharedState, $route, $scope, $location, $timeout, $rootScope) {
-            const SPLASH_DELAY = 300;
+            const SPLASH_DELAY = 1000;
             const FADE_DELAY = 1000;
             var that = this;
             this.ready = 0;
