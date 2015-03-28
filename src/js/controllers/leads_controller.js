@@ -7,12 +7,12 @@
         $scope.queryBy = '$';
 
         $scope.toggleOpen = function(id) {
+            $scope.tabs[id] = !$scope.tabs[id];
             for (var i in $scope.tabs) {
                 if ($scope.tabs[i] != 'undefined' && i != id) {
                     $scope.tabs[i] = false;
                 }
             }
-            $scope.tabs[id] = !$scope.tabs[id];
         };
 
         // HTTP GET leads
