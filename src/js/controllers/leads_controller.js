@@ -1,16 +1,10 @@
 (function () {
     var app = angular.module('App.controllers.Leads', []);
     app.controller('LeadsController', ['$http', '$scope', function($http, $scope) {
-    	$scope.response = {};
-        $scope.tabs = {};
-        $scope.query = {}
-        $scope.queryBy = '$'
-
-        $scope.toTimestamp = function(date) {
-            var new_date = new Date(date);
-            console.log(new_date);
-            return new_date;
-        };
+    	$scope.leads = [];
+        $scope.tabs = [];
+        $scope.query = {};
+        $scope.queryBy = '$';
 
         $scope.toggleOpen = function(id) {
             for (var i in $scope.tabs) {
@@ -31,16 +25,8 @@
 
     			// Good response
                 if (response.status) {
-    				$scope.response.message = response.message;
-    				$scope.response.status = response.status;
-    				$scope.response.data = response.data;
-    			} else {
-                    // Bad response
-    				console.log('FATAL ERROR');
+    				$scope.leads = response.data;
     			}
-    		})
-    		.error(function (data, status, headers, config) {
-    			console.log('FATAL ERROR');
     		});
     }]);
 })();

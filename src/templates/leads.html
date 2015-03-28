@@ -8,8 +8,8 @@
 			<input ng-model="query[queryBy]" class="form-control search-input" toggle-class-target="search-input-focused">
    		</div>
    	</div>
-	<div class="panel-group">
-		<div class="panel panel-default" ng-repeat="lead in response.data | orderBy: 'first_name' | filter:query" ng-init="tabs[lead.id] = false">
+	<div class="panel-group" ng-show="leads.length">
+		<div class="panel panel-default" ng-repeat="lead in leads | orderBy: 'first_name' | filter:query" ng-init="tabs[lead.id] = false">
 			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
 				<h4 class="panel-title">
 					<span>{{lead.first_name}} {{lead.last_name}}</span></a>
@@ -38,5 +38,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="jumbotron" ng-hide="leads.length">
+		<h1>No Leads to Display!</h1>
 	</div>
 </div>

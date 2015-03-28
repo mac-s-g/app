@@ -1,0 +1,42 @@
+<div class="modal-header">
+	<div class="row">
+		<div class="col-xs-12"><h4 style="margin-top:5px">Lead Response</h4></div>
+<!-- 		<input 
+		type="text" 
+		class="form-control" 
+		datepicker-popup="shortDate" 
+		ng-model="dt" 
+		is-open="opened" 
+		min-date="minDate" 
+		max-date="'2015-06-22'" 
+		datepicker-options="dateOptions" 
+		date-disabled="disabled(date, mode)" 
+		ng-required="true" 
+		close-text="Close" /> -->
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<button
+			style="width:100%"
+			datepicker-popup="{{datePickerPopup}}" 
+			ng-model="dt" 
+			is-open="opened" 
+			min-date="minDate" 
+			max-date="'2015-06-22'" 
+			datepicker-options="{{datePickerOptions}}" 
+			date-disabled="disabled(date, mode)"
+			ng-required="true" 
+			close-text="Close" class="btn btn-success btn-sm" ng-click="modalCtrl.addEvent($event)">
+				<i class="fa fa-calendar" style="margin-right:5px"></i>Add to Calendar</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-body" style="text-align:center;">
+    <pre>RESPONSE INFORMATION</pre>
+    <pre>RESPONSE ANALYSIS</pre>
+    <pre>NEXT MESSAGE INFORMATION</pre>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="modalCtrl.ok()">Close</button>
+</div>
