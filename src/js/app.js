@@ -8,6 +8,7 @@
       //ngShow, Hide animations
       'mwl.calendar',
       'App.controllers.Main',
+      'App.controllers.Login',
       'App.controllers.Alerts',
       'App.controllers.Calendar',
       'App.controllers.Leads',
@@ -19,7 +20,7 @@
     ]);
 
     app.config(function($routeProvider) {
-        $routeProvider.when('/', {
+        $routeProvider.when('/home', {
             templateUrl:'home.html',
             reloadOnSearch: false,
             css: 'css/home.css'
@@ -54,6 +55,12 @@
             reloadOnSearch: false,
             css: 'css/calendar.css'
         });
+        $routeProvider.otherwise({
+            templateUrl:'login.html',
+            reloadOnSearch: false,
+            css: 'css/login.css'
+        });
+
     });
 
 })();
