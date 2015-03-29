@@ -8,8 +8,6 @@
       	$scope.leads = [];
 
         $scope.checkSwipe = function ($event) {
-            console.log($event);
-            console.log($scope.swiping);
             if ($scope.alertOpen) {
               $event.stopPropagation();
             }
