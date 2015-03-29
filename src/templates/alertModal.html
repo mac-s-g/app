@@ -1,0 +1,30 @@
+<div ng-swipe-right="$event.stopPropagation()">
+	<div class="modal-header">
+		<div class="row">
+			<div class="col-xs-12"><h4 style="margin-top:5px">Lead Response</h4></div>
+		</div>
+			<button
+			style="width:100%;"
+			datepicker-popup="{{datePickerPopup}}" 
+			ng-model="dt" 
+			is-open="opened" 
+			min-date="minDate" 
+			max-date="'2015-06-22'" 
+			datepicker-options="{{datePickerOptions}}" 
+			date-disabled="disabled(date, mode)"
+			ng-required="true" 
+			close-text="Close" class="btn btn-success btn-sm" ng-click="modalCtrl.addEvent($event)">
+				<i class="fa fa-calendar" style="margin-right:5px;"></i>Add to Calendar</button>
+
+			<div class="alert alert-success" ng-click="closeConfirm()" ng-show="eventAdded" style="margin-top:5px; margin-bottom:0; padding:8px;"><i class="fa fa-check" style="margin-right:5px"></i>Reminder added!<div class="pull-right"><i class="fa fa-times" style="cursor:pointer;"></i></div></div>
+	</div>
+	<div class="modal-body" style="text-align:center;">
+		<pre>{{lead.first_name}} {{lead.last_name}}</pre>
+	    <pre>RESPONSE INFORMATION</pre>
+	    <pre>RESPONSE ANALYSIS</pre>
+	    <pre>NEXT MESSAGE INFORMATION</pre>
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="modalCtrl.ok()" style="width:100%; border-color:#3498db;">Close</button>
+	</div>
+</div>
