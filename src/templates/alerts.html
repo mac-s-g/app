@@ -1,12 +1,11 @@
-<div ng-controller="AlertsController as alertsCtrl" class="container">
+<div ng-controller="AlertsController as alertsCtrl" class="container" ng-swipe-right="checkSwipe($event)">
     <div class="title-container alerts" style="margin-bottom:15px">
         <i class="fa fa-bullhorn fa-3x"></i><span class="title-text">Alerts</span>
     </div>
 	<div class="panel-group" ng-show="leads.length">
-		<div class="panel panel-default" ng-repeat="lead in leads" ng-init="tabs[lead.id] = false">
-			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
-			</div>
-			<div class="panel-collapse" collapse="!tabs[lead.id]">
+		<div class="list-group">
+			<div class="list-group-item" ng-repeat="lead in leads" style="cursor:pointer" ng-click="openAlert(lead)">
+				<div style="width:10px; height:10px; border-radius:5px; display:inline-block; margin-right:5px; background-color:{{lead.alert_class}}"></div>{{lead.first_name}} {{lead.last_name}}<i class="fa fa-plus pull-right"></i>
 			</div>
 		</div>
 	</div>

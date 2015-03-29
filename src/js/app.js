@@ -57,8 +57,9 @@
         });
     });
 
-    app.service('CalendarEvents', function () {
+    app.service('CalendarEvents', ['$q', function ($q) {
         var self = this;
+
         this.events = [
           {
             title: 'Lead Followup - Taylor Birkeland', // The title of the event
@@ -87,11 +88,14 @@
         ];
 
         this.addEvent = function (e) {
+            var defer = $q.defer();
             self.events.push(e);
+            defer.resolve();
+            return defer.promise;
         };
 
         this.getEvents = function () {
             return self.events;
         };
-    });
+    }]);
 })();

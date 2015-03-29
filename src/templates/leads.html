@@ -13,7 +13,7 @@
 		<div class="panel panel-default" ng-repeat="lead in leads | orderBy: 'first_name' | filter:query" ng-init="tabs[lead.id] = false">
 			<div class="panel-heading accordion-toggle" ng-click="toggleOpen(lead.id)">
 				<h4 class="panel-title">
-					<span>{{lead.first_name}} {{lead.last_name}}</span></a>
+					<span>{{lead.first_name}} {{lead.last_name}}</span>
 					<i ng-class="{false:'fa fa-chevron-right pull-right', true:'fa fa-chevron-right pull-right fa-rotate-90'}[tabs[lead.id]]"></i>
 				</h4>
 			</div>
